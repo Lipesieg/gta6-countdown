@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contagem Regressiva GTA 6</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ffcc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    #countdown {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+
+    .label {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contagem Regressiva para o GTA 6</h1>
+  <div id="countdown">Carregando...</div>
+  <div class="label">Lançamento estimado: 2025-10-22</div>
+
+  <script>
+    // Data de lançamento (estimativa ou data oficial se disponível)
+    const launchDate = new Date("2025-10-22T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "GTA 6 LANÇADO!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // chamada inicial
+  </script>
+
+</body>
+</html>
