@@ -6,31 +6,39 @@
   <title>Contagem Regressiva GTA 6</title>
   <style>
     body {
-      background-color: #000;
-      color: #00ffcc;
+      margin: 0;
+      padding: 0;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
+      color: #ffffff;
       text-align: center;
+      background-image: url('https://media.rockstargames.com/rockstargames-newsite/uploads/71673fd2e659cf0c967d41f6be2baf1fc9e0544d.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      backdrop-filter: brightness(0.6);
     }
 
     h1 {
       font-size: 3rem;
+      text-shadow: 2px 2px 8px #000;
     }
 
     #countdown {
       font-size: 2.5rem;
       margin-top: 20px;
+      text-shadow: 2px 2px 8px #000;
     }
 
     .label {
       margin-top: 30px;
       font-size: 1.2rem;
-      color: #aaa;
+      color: #ccc;
+      text-shadow: 1px 1px 6px #000;
     }
   </style>
 </head>
@@ -38,10 +46,9 @@
 
   <h1>Contagem Regressiva para o GTA 6</h1>
   <div id="countdown">Carregando...</div>
-  <div class="label">Lançamento estimado: 2025-10-22</div>
+  <div class="label">Lançamento estimado: 22 de outubro de 2025</div>
 
   <script>
-    // Data de lançamento (estimativa ou data oficial se disponível)
     const launchDate = new Date("2025-10-22T00:00:00").getTime();
 
     function updateCountdown() {
@@ -58,12 +65,12 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("countdown").innerHTML = 
+      document.getElementById("countdown").innerHTML =
         `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
     setInterval(updateCountdown, 1000);
-    updateCountdown(); // chamada inicial
+    updateCountdown();
   </script>
 
 </body>
